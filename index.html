@@ -6,13 +6,6 @@
     <title>Unity WebGL Player | Djaba</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script>
-      function FromUnityToJs ()
-      {
-        alert ("Very good!");
-      }
-
-    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -45,7 +38,6 @@
       // Modify or remove this function to customize the visually presented
       // way that non-critical warnings and error messages are presented to the
       // user.
-
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -65,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/builds.loader.js";
+      var loaderUrl = buildUrl + "/buildDjaba.loader.js";
       var config = {
-        dataUrl: buildUrl + "/builds.data.br",
-        frameworkUrl: buildUrl + "/builds.framework.js.br",
-        codeUrl: buildUrl + "/builds.wasm.br",
+        dataUrl: buildUrl + "/buildDjaba.data",
+        frameworkUrl: buildUrl + "/buildDjaba.framework.js",
+        codeUrl: buildUrl + "/buildDjaba.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Djaba",
