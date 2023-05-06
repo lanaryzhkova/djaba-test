@@ -12,7 +12,6 @@
       {
         alert ("Very good!");
       }
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Djaba.json", {onProgress: UnityProgress});
       jQuery(document).ready(function($) // страница прогружена
       {
       });
@@ -50,10 +49,6 @@
       // way that non-critical warnings and error messages are presented to the
       // user.
 
-      function FromUnityToJs ()
-        {
-          alert ("Very good!");
-        } 
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
