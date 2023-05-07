@@ -65,10 +65,33 @@
 
          jQuery(document).ready(function($) // страница прогружена
       {
-        vkBridge.send('VKWebAppInit');
+        vkBridge.send('VKWebAppInit')
+        .then((data) => { 
+          if (data.result) {
+            console.log('OK');
+          } else {
+            // Ошибка
+          }
+        })
+        .catch((error) => {
+          // Ошибка
+          console.log(error);
+        });
 
 
       });
+
+      function getFriends(){
+        vkBridge.send('VKWebAppGetFriends')
+        .then((data) => { 
+          if (data.users) {
+            console.log(data.users);          }
+        })
+      .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
+      }
 
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
