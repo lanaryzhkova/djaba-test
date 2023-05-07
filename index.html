@@ -6,6 +6,7 @@
     <title>Unity WebGL Player | Djaba</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -38,6 +39,32 @@
       // Modify or remove this function to customize the visually presented
       // way that non-critical warnings and error messages are presented to the
       // user.
+
+      function callMethodWallPost() // вызываем метод ВК
+         {
+            vkBridge.send('VKWebAppShowWallPostBox', {
+              message: 'Первая запись на стене!'
+              })
+              .then((data) => {
+                if (data.post_id) {
+                  // Запись размещена
+                  console.log ("ok");
+                }
+              })
+              .catch((error) => {
+                // Ошибка
+                console.log(error);
+              });
+
+         }
+
+         jQuery(document).ready(function($) // страница прогружена
+      {
+        vkBridge.send('VKWebAppInit');
+
+
+      });
+
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
